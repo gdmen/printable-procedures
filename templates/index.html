@@ -1,4 +1,4 @@
-<html>
+khtml>
   <head>
     <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/node_modules/marked/marked.min.js"></script>
@@ -6,7 +6,7 @@
   </head>
   <body>
     <script type="text/javascript">
-      window.MARKDOWN_FILES = {{ markdown_files|safe }}
+      window.MARKDOWN_FILES = {{ file_infos|safe }}
     </script>
     <div id="header"><h1 id="title">|</h1></div>
     <div id="content">
@@ -16,10 +16,10 @@
             <th id="name">Name</th>
             <th id="last-modified">Last modified</th>
           </tr>
-          {% for file in markdown_files %}
+          {% for f in file_infos %}
           <tr class="file">
-            <td><a href='/{{ file }}'>{{ file }}</a></td>
-            <td><a href='/{{ file }}'>Jan 1, 2016</a></td>
+            <td><a href='/{{ f.name }}'>{{ f.name }}</a></td>
+            <td><a href='/{{ f.name }}'>{{ f.last_modified }}</a></td>
           </tr>
           {% endfor %}
         </table>
