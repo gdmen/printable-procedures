@@ -30,10 +30,14 @@ h5 {
 }
 #header #title {
   font-size: 2rem;
+  margin: 0 auto;
+  max-width: 980px;
   padding: 1rem 2rem;
 }
 #content {
+  margin: 0 auto;
   margin-top: 4rem;
+  max-width: 980px;
   position: relative;
   z-index: 499;
 }
@@ -53,7 +57,7 @@ h5 {
   text-align: left;
 }
 #content #file-list table tr:first-child th#last-modified {
-  width: 10rem;
+  max-width: 10rem;
 }
 #content #file-list table tr.file td:first-child a {
   padding-left: 2.25rem;
@@ -77,9 +81,6 @@ h5 {
 #content #file-list table tr td:first-child,
 #content #file-list table tr th:first-child {
   padding-left: 2rem;
-}
-#content #file-list table tr td {
-  display: block;
 }
 #content #file-list table tr td a,
 #content #file-list table tr td a:link,
