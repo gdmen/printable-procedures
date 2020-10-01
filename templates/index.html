@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/node_modules/marked/marked.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.MARKDOWN_FILES = {{ markdown_files|safe }}
+    </script>
+    <div id="header"><h1 id="title">|</h1></div>
+    <div id="content">
+      <div id="file-list">
+        <table>
+          <tr>
+            <th id="name">Name</th>
+            <th id="last-modified">Last modified</th>
+          </tr>
+          {% for file in markdown_files %}
+          <tr class="file">
+            <td><a href='/{{ file }}'>{{ file }}</a></td>
+            <td><a href='/{{ file }}'>Jan 1, 2016</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+<!--
+<div>Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+
+<div>Icons made by <a href="http://www.flaticon.com/authors/situ-herrera" title="Situ Herrera">Situ Herrera</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+-->

@@ -1,0 +1,187 @@
+.box-shadow {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  background-color: #2c8ec9;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  color: white;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+}
+#header #title {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+#content {
+  margin-top: 4rem;
+  position: relative;
+  z-index: 499;
+}
+#content #file-list {
+  width: 100%;
+}
+#content #file-list table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#content #file-list table tr:first-child:hover {
+  background-color: inherit;
+}
+#content #file-list table tr:first-child th {
+  padding: 1rem;
+  padding-left: 0;
+  text-align: left;
+}
+#content #file-list table tr:first-child th#last-modified {
+  width: 10rem;
+}
+#content #file-list table tr.file td:first-child a {
+  padding-left: 2.25rem;
+}
+#content #file-list table tr.file td:first-child:before {
+  content: '';
+  background: url('/images/non-commercial/file.svg');
+  height: 1.5rem;
+  margin: 0.75rem 0;
+  position: absolute;
+  width: 1.5rem;
+}
+#content #file-list table tr:hover {
+  background-color: #E0F7FF;
+}
+#content #file-list table tr td,
+#content #file-list table tr th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+#content #file-list table tr td:first-child,
+#content #file-list table tr th:first-child {
+  padding-left: 2rem;
+}
+#content #file-list table tr td {
+  display: block;
+}
+#content #file-list table tr td a,
+#content #file-list table tr td a:link,
+#content #file-list table tr td a:visited,
+#content #file-list table tr td a:hover,
+#content #file-list table tr td a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+#content #file-list table tr td a {
+  display: block;
+  padding: 1rem 0;
+}
+#checklist.print {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#checklist.print > h1,
+#checklist.print h2,
+#checklist.print h3,
+#checklist.print h4,
+#checklist.print h5 {
+  margin: 0.5em 0;
+  text-align: center;
+}
+#checklist.print > ol,
+#checklist.print > ul {
+  margin: 0;
+  padding: 0;
+}
+#checklist.print ol,
+#checklist.print ul {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  list-style: none;
+  padding-left: 0;
+}
+#checklist.print ol li,
+#checklist.print ul li {
+  border-top: 0.125rem solid white;
+}
+#checklist.print ol li.odd,
+#checklist.print ul li.odd {
+  background: #C4F0FF;
+}
+#checklist.print ol li.even,
+#checklist.print ul li.even {
+  background: #E0F7FF;
+}
+#checklist.print ol li:before,
+#checklist.print ul li:before {
+  -webkit-border-radius: 0.0625rem;
+  -moz-border-radius: 0.0625rem;
+  border-radius: 0.0625rem;
+  content: "";
+  height: 1.25rem;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #000;
+  -moz-box-shadow: inset 0px 0px 0px 1px #000;
+  box-shadow: inset 0px 0px 0px 1px #000;
+  width: 1.25rem;
+  margin: 0.25rem 0;
+  position: absolute;
+}
+#checklist.print ol li.depth-1:before,
+#checklist.print ul li.depth-1:before {
+  margin-left: 0.25rem;
+}
+#checklist.print ol li.depth-2:before,
+#checklist.print ul li.depth-2:before {
+  margin-left: 2rem;
+}
+#checklist.print ol li.depth-3:before,
+#checklist.print ul li.depth-3:before {
+  margin-left: 3.75rem;
+}
+#checklist.print ol li.depth-4:before,
+#checklist.print ul li.depth-4:before {
+  margin-left: 5.5rem;
+}
+#checklist.print ol li div,
+#checklist.print ul li div {
+  padding: 0.25rem 0;
+}
+#checklist.print ol li div.depth-1,
+#checklist.print ul li div.depth-1 {
+  margin-left: 1.75rem;
+}
+#checklist.print ol li div.depth-2,
+#checklist.print ul li div.depth-2 {
+  margin-left: 3.5rem;
+}
+#checklist.print ol li div.depth-3,
+#checklist.print ul li div.depth-3 {
+  margin-left: 5.25rem;
+}
+#checklist.print ol li div.depth-4,
+#checklist.print ul li div.depth-4 {
+  margin-left: 7rem;
+}
+#checklist.print ol li img,
+#checklist.print ul li img {
+  height: 1rem;
+  margin-bottom: -0.125rem;
+}

@@ -1,0 +1,192 @@
+@odd-row: #C4F0FF;
+@even-row: #E0F7FF;
+
+.box-shadow {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+}
+.inner-border(@color) {
+  -webkit-box-shadow:inset 0px 0px 0px 1px @color;
+  -moz-box-shadow:inset 0px 0px 0px 1px @color;
+  box-shadow:inset 0px 0px 0px 1px @color;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+@header-font-size: 2rem;
+@header-height: 4rem;
+@header-padding-tb: (@header-height - @header-font-size) / 2;
+@header-padding-lr: 2 * @header-padding-tb;
+#header {
+  background-color: #2c8ec9;
+  .box-shadow;
+  color: white;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+  #title {
+    font-size: @header-font-size;
+    padding: @header-padding-tb @header-padding-lr;
+  }
+}
+#content {
+  @file-image-height: 1.5rem;
+  @file-row-height: 2 * @file-image-height;
+  @file-row-padding: (@file-row-height - 1rem) / 2;
+  margin-top: @header-height;
+  position: relative;
+  z-index: 499;
+  #file-list {
+    width: 100%;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      tr:first-child {
+        &:hover {
+          background-color: inherit;
+        }
+        th {
+          padding: @file-row-padding;
+          padding-left: 0;
+          text-align: left;
+          &#last-modified {
+            width: 10rem;
+          }
+        }
+      }
+      tr.file {
+        td:first-child {
+          a {
+            padding-left: 1.5 * @file-image-height;
+          }
+          &:before {
+            content: '';
+            background: url('/images/non-commercial/file.svg');
+            height: @file-image-height;
+            margin: (@file-row-height - @file-image-height) / 2 0;
+            position: absolute;
+            width: @file-image-height;
+          }
+        }
+      }
+      tr {
+        &:hover {
+          background-color: @even-row;
+        }
+        td, th {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          padding: 0;
+          &:first-child {
+            padding-left: 2 * @file-row-padding;
+          }
+        }
+        td {
+          display: block;
+          a,
+          a:link,
+          a:visited,
+          a:hover,
+          a:active {
+            color: inherit;
+            text-decoration: inherit;
+            font-weight: inherit;
+          }
+          a {
+            display: block;
+            padding: @file-row-padding 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@print-color: #000;
+@print-font-size: 1rem;
+@print-line-height-multiplier: 1.25;
+@print-row-margin-tb: @print-font-size / 4;
+@print-indentation: @print-font-size * 1.75;
+@print-padding-left: 0;
+
+#checklist.print{
+  color: @print-color;
+  font-family: Arial, Helvetica, sans-serif;
+  &> h1, h2, h3, h4, h5 {
+    margin: 0.5em 0;
+    text-align: center;
+  }
+  &> ol, &> ul {
+    margin: 0;
+    padding: 0;
+  }
+  ol, ul {
+    font-size: @print-font-size;
+    line-height: @print-font-size * @print-line-height-multiplier;
+    list-style: none;
+    padding-left: 0;
+    li {
+      border-top: 0.125rem solid white;
+      &.odd {
+        background: @odd-row;
+      }
+      &.even {
+        background: @even-row;
+      }
+      &:before {
+        .border-radius(0.0625rem);
+        content: "";
+        height: @print-font-size * @print-line-height-multiplier;
+        .inner-border(@print-color);
+        width: @print-font-size * @print-line-height-multiplier;
+        margin: @print-row-margin-tb 0;
+        position: absolute;
+      }
+      &.depth-1:before {
+        margin-left: @print-padding-left + (@print-indentation - @print-font-size) - @print-font-size / 2;
+      }
+      &.depth-2:before {
+        margin-left: @print-padding-left + (2 * @print-indentation - @print-font-size) - @print-font-size / 2;
+      }
+      &.depth-3:before {
+        margin-left: @print-padding-left + (3 * @print-indentation - @print-font-size) - @print-font-size / 2;
+      }
+      &.depth-4:before {
+        margin-left: @print-padding-left + (4 * @print-indentation - @print-font-size) - @print-font-size / 2;
+      }
+      div {
+        padding: @print-row-margin-tb 0;
+        &.depth-1 {
+          margin-left: @print-padding-left + @print-indentation;
+        }
+        &.depth-2 {
+          margin-left: @print-padding-left + 2 * @print-indentation;
+        }
+        &.depth-3 {
+          margin-left: @print-padding-left + 3 * @print-indentation;
+        }
+        &.depth-4 {
+          margin-left: @print-padding-left + 4 * @print-indentation;
+        }
+      }
+      img {
+        height: @print-font-size;
+        margin-bottom: -0.5 * @print-font-size * (@print-line-height-multiplier - 1)
+      }
+    }
+  }
+}

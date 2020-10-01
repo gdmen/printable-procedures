@@ -1,0 +1,9 @@
+{
+  "name": "procedures",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "less": "^3.12.2",
+    "marked": "^1.2.0"
+  }
+}
