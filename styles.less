@@ -1,3 +1,5 @@
+@import "reset.css";
+
 @odd-row: #C4F0FF;
 @even-row: #E0F7FF;
 
@@ -18,12 +20,18 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
 }
 h1, h2, h3, h4, h5 {
-  margin: 0;
-  padding: 0;
+}
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italics;
 }
 
 @content-width: 980px;
@@ -67,6 +75,7 @@ h1, h2, h3, h4, h5 {
           background-color: inherit;
         }
         th {
+          font-weight: bold;
           padding: @file-row-padding;
           padding-left: 0;
           text-align: left;
