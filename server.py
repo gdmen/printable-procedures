@@ -1,10 +1,10 @@
-from flask import Flask, render_template, send_file
+import flask
 import glob
 import os
 
 MARKDOWN_DIR = 'markdown'
 
-app = Flask(
+app = flask.Flask(
     __name__,
     static_url_path=''
 )
@@ -14,7 +14,7 @@ markdown_files = [os.path.splitext(os.path.basename(path))[0] for path in markdo
 
 @app.route('/')
 def index():
-    return render_template('index.html', markdown_files=markdown_files)
+    return flask.render_template('index.html', markdown_files=markdown_files)
 
 @app.route('/<path>')
 @app.route('/<path:path>')
@@ -25,11 +25,9 @@ def show(path):
             markdown = f.read()
         markdown = markdown.replace('"', '\\"')
         markdown = markdown.replace('\n', '\\n')
-        return render_template('print.html', markdown_files=markdown_files, markdown=markdown)
-    elif not '.' in path or '.html' in path:
-        return render_template(path, slack_usernames=slack_usernames)
+        return flask.render_template('print.html', markdown_files=markdown_files, markdown=markdown)
     else:
-        return backbone_app.send_static_file(path)
+        return app.send_static_file(path)
 
 if __name__ == '__main__':
     app.run(debug=True)
