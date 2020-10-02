@@ -1,8 +1,8 @@
 # Alcohol Care
-* __Seizure__ <call></call>
+* __Seizure__ <i class="alert">CALL 911</i>
   * DO NOT restrain
   * Protect head & body from injury
-* __Unresponsive__ (can't be roused) <call></call>
+* __Unresponsive__ (can't be roused) <i class="alert">CALL 911</i>
   * Monitor respiration: keep airway clear
   * If lying down: on their side with knees bent
   * Be prepared to give Positive Pressure Ventilation or CPR
@@ -11,24 +11,24 @@
   * If lying down: on their side with knees bent
   * DO NOT induce vomiting
 * __Unresponsive to Voice__ (includes sleeping)
-  * Blue lips <call></call>
-  * Cold and clammy extremities <call></call>
-  * Does not have a pulse <call></call>
-  * Having difficulty breathing (choking, wheezing, or rasping) <call></call>
-  * Breathing irregularly (less than 6x per minute, more than 20x per minute) <call></call>
+  * Blue lips <i class="alert">CALL 911</i>
+  * Cold and clammy extremities <i class="alert">CALL 911</i>
+  * Does not have a pulse <i class="alert">CALL 911</i>
+  * Having difficulty breathing (choking, wheezing, or rasping) <i class="alert">CALL 911</i>
+  * Breathing irregularly (less than 6x per minute, more than 20x per minute) <i class="alert">CALL 911</i>
   * If lying down: on their side with knees bent
   * Leave doors open
 * __Not Alert (but responds to Voice)__
-  * Blue lips or pale or bluish in skin tone <call></call>
-  * Cold and clammy extremities <call></call>
-  * Feverish or having the "chills" <call></call>
-  * Complaining of pressure or tightness in the chest <call></call>
-  * Having difficulty breathing (choking, wheezing, or rasping) <call></call>
-  * Breathing irregularly (less than 6x per minute, more than 20x per minute) <call></call>
+  * Blue lips or pale or bluish in skin tone <i class="alert">CALL 911</i>
+  * Cold and clammy extremities <i class="alert">CALL 911</i>
+  * Feverish or having the "chills" <i class="alert">CALL 911</i>
+  * Complaining of pressure or tightness in the chest <i class="alert">CALL 911</i>
+  * Having difficulty breathing (choking, wheezing, or rasping) <i class="alert">CALL 911</i>
+  * Breathing irregularly (less than 6x per minute, more than 20x per minute) <i class="alert">CALL 911</i>
   * If lying down: on their side with knees bent
   * Eat something slowly if they are up to it
   * Sip water; don't gulp it
-* <call></call>
+* <i class="alert">CALL 911</i>
   * Find out what substances they've taken
 
 <div class="citations">
