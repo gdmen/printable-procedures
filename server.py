@@ -12,13 +12,12 @@ app = flask.Flask(
 
 class FileInfo:
 
-    def __init__(self, name, last_modified):
+    def __init__(self, name):
         self.name = name
-        self.last_modified = datetime.datetime.fromtimestamp(last_modified).strftime('%b %d, %Y')
 
 def GetFileInfos():
     md_paths = glob.glob('%s/*.md' % MARKDOWN_DIR)
-    md_file_infos = [FileInfo(os.path.splitext(os.path.basename(path))[0], os.path.getmtime(path)) for path in md_paths]
+    md_file_infos = [FileInfo(os.path.splitext(os.path.basename(path))[0]) for path in md_paths]
     return md_file_infos
 
 @app.route('/')
