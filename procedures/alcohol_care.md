@@ -10,7 +10,7 @@
   * Monitor respiration: keep airway clear
   * If lying down: on their side with knees bent
   * DO NOT induce vomiting
-* __Unresponsive to Voice (includes sleeping)__
+* __Unresponsive to Voice__ (includes sleeping)
   * Blue lips <call></call>
   * Cold and clammy extremities <call></call>
   * Does not have a pulse <call></call>
