@@ -23,3 +23,7 @@ Add new checklists to `procedures/` as [Markdown](https://daringfireball.net/pro
   ...
   </div>
   ```
+* #### alerts:
+  ```
+  <i class="alert">CALL 911!</i>
+  ```
