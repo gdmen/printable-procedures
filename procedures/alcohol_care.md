@@ -18,7 +18,7 @@
   * Breathing irregularly (less than 6x per minute, more than 20x per minute) <i class="alert">CALL 911</i>
   * If lying down: on their side with knees bent
   * Leave doors open
-* __Not Alert (but responds to Voice)__
+* __Not Alert__ (but responds to Voice)
   * Blue lips or pale or bluish in skin tone <i class="alert">CALL 911</i>
   * Cold and clammy extremities <i class="alert">CALL 911</i>
   * Feverish or having the "chills" <i class="alert">CALL 911</i>
