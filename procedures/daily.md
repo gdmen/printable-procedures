@@ -1,20 +1,29 @@
-# Morning
-1. Meditate
-1. Brush teeth / bathroom
-1. Pack
+<div id="header">
+<h1 class="logo"><a href="/">>></a></h1>
+<h1 class="title">
+Morning
+</h1></div>
+
+* Meditate
+* Brush teeth / bathroom
+* Pack
     * keys
     * phone
     * wallet
     * shoes
 
-# Night
-1. Supplements
-1. Brush teeth / bathroom
-1. Prep bags for tomorrow
+<div id="header">
+<h1 class="title">
+Night
+</h1></div>
+
+* Supplements
+* Brush teeth / bathroom
+* Prep bags for tomorrow
     * laptop
     * bjj gear
     * work clothes
     * towel
-1. Stretch
-1. Meditate
+* Stretch
+* Meditate
 

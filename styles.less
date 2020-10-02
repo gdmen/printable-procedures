@@ -20,15 +20,26 @@ html, body {
   @header-height: 2em;
   background-color: @header-bg-color;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
-  color: white;
+  color: @header-color;
   font-size: @header-font-size;
+  font-weight: bold;
   height: @header-height;
   padding: 0 0.5em;
-  #title {
-    font-weight: bold;
+  position: relative;
+  .logo {
+    padding-top: (@header-height - 1em) * 0.4;
+    position: absolute;
+    left: 0.5em;
+    a {
+      color: @header-color;
+      text-decoration: none;
+    }
+  }
+  .title {
     height: 1em;
     margin: 0 auto;
     padding-top: (@header-height - 1em) * 0.4;
+    text-align: center;
     vertical-align: middle;
   }
 }
@@ -76,14 +87,6 @@ html, body {
 @print-indentation: 1.75em;
 
 #checklist {
-  > h1 {
-    background-color: @header-bg-color;
-    color: @header-color;
-    font-size: 2em;
-    font-weight: bold;
-    padding: 0.5em;
-    text-align: center;
-  }
   strong {
     font-weight: bold;
   }
@@ -91,13 +94,17 @@ html, body {
     font-style: italic;
   }
   > ol, > ul {
+    &> li:first-child {
+      border-top: none;
+      margin-top: 0.125em;
+    }
     li {
       border-top: 0.125em solid white;
       &.odd {
-        background: @odd-color;
+        background-color: @odd-color;
       }
       &.even {
-        background: @even-color;
+        background-color: @even-color;
       }
       div {
         line-height: @print-line-height;

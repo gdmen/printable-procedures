@@ -1,7 +1,12 @@
-# Clean Room
-1. Take out trash and recycling
-1. Put away shoes and clothes
-1. Run laundry
-1. Put away misc
-1. Scan and shred documents
-1. Vacuum and dust. **Date last done:**
+<div id="header">
+<h1 class="logo"><a href="/">>></a></h1>
+<h1 class="title">
+Clean Room
+</h1></div>
+
+* Take out trash and recycling
+* Put away shoes and clothes
+* Run laundry
+* Put away misc
+* Scan and shred documents
+* Vacuum and dust. **Date last done:**

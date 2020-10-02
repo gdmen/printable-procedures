@@ -1,4 +1,9 @@
-# Alcohol Care
+<div id="header">
+<h1 class="logo"><a href="/">>></a></h1>
+<h1 class="title">
+Alcohol Care
+</h1></div>
+
 * __Seizure__ <i class="alert">CALL 911</i>
   * DO NOT restrain
   * Protect head & body from injury
