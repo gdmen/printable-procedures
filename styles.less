@@ -1,212 +1,188 @@
 @import "reset.css";
 
-@odd-row: #C4F0FF;
-@even-row: #E0F7FF;
+/* Elusive Icons */
+@import "../fonts/elusive-icons-2.0.0/css/elusive-icons.min.css";
+
+@header-bg-color: #2c8ec9;
+@header-color: white;
+@content-color: #404040;
+@odd-color: #C4F0FF;
+@even-color: #E0F7FF;
+
+@content-width: 980px;
+
+html, body {
+  color: @content-color;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+  @header-font-size: 2em;
+  @header-height: 2em;
+  background-color: @header-bg-color;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  color: white;
+  font-size: @header-font-size;
+  height: @header-height;
+  padding: 0 0.5em;
+  #title {
+    font-weight: bold;
+    height: 1em;
+    margin: 0 auto;
+    max-width: @content-width;
+    padding-top: (@header-height - 1em) * 0.4;
+    vertical-align: middle;
+  }
+}
+
+#content {
+  @file-row-padding: 1.5em;
+  margin: 0 auto;
+  max-width: @content-width;
+  #file-list {
+    table {
+      text-align: left;
+      width: 100%;
+      tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        &.file {
+          &:hover {
+            background-color: @even-color;
+          }
+          a {
+            color: inherit;
+            display: block;
+            font-weight: inherit;
+            padding: @file-row-padding;
+            text-decoration: inherit;
+          }
+          td:first-child > a {
+            &::before {
+              content: "\f19e";
+              font-family: "Elusive-Icons";
+              font-size: 2em;
+              margin-right: 0.5em;
+              vertical-align: middle;
+            }
+          }
+        }
+        td {
+          line-height: 1em;
+        }
+        th {
+          font-weight: bold;
+          padding: @file-row-padding;
+          &:first-child {
+            width: 100%;
+          }
+          &:last-child {
+            min-width: 7em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@print-line-height: 1.25em;
+@print-row-margin: 1em;
+@print-indentation: 1.75em;
+
+#checklist {
+  > h1 {
+    background-color: @header-bg-color;
+    color: @header-color;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0.5em;
+    text-align: center;
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    font-style: italic;
+  }
+  > ol, > ul {
+    li {
+      border-top: 0.125em solid white;
+      &.odd {
+        background: @odd-color;
+      }
+      &.even {
+        background: @even-color;
+      }
+      div {
+        line-height: @print-line-height;
+        padding: @print-row-margin;
+        &::before {
+          border: 1px solid black;
+          content: "";
+          display: inline-block;
+          font-size: @print-line-height;
+          height: 1em;
+          margin-right: 0.5em;
+          vertical-align: middle;
+          width: 1em;
+        }
+        span {
+          vertical-align: middle;
+        }
+        &.depth-1 {
+          padding-left: @print-row-margin;
+        }
+        &.depth-2 {
+          padding-left: @print-row-margin + @print-indentation;
+        }
+        &.depth-3 {
+          padding-left: @print-row-margin + @print-indentation * 2;
+        }
+        &.depth-4 {
+          padding-left: @print-row-margin + @print-indentation * 3;
+        }
+        &.depth-5 {
+          padding-left: @print-row-margin + @print-indentation * 4;
+        }
+      }
+    }
+  }
+  .citations {
+    background-color: @header-bg-color;
+    color: @header-color;
+    padding: @print-row-margin;
+    &::before {
+      content: "Sources: ";
+      display: inline-block;
+      font-size: 1.25em;
+      padding-bottom: @print-row-margin / 2;
+    }
+    ol, ul {
+      list-style: decimal inside none;
+      li {
+        line-height: @print-line-height;
+        padding: @print-row-margin / 2 0;
+        a {
+          color: @header-color;
+        }
+      }
+    }
+  }
+}
+
+@page {
+  margin: 0;
+}
+
+@media print {
+  .citations {
+    display: none !important;;
+  }
+}
+
 
 call::before {
   content: "CALL 911";
   color: #ec6173;
   font-weight: bold;
-}
-
-.box-shadow {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
-}
-.inner-border(@color) {
-  -webkit-box-shadow:inset 0px 0px 0px 1px @color;
-  -moz-box-shadow:inset 0px 0px 0px 1px @color;
-  box-shadow:inset 0px 0px 0px 1px @color;
-}
-.border-radius(@radius) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
-}
-
-html, body {
-}
-h1, h2, h3, h4, h5 {
-}
-h1 {
-  font-size: 2em;
-  font-weight: bold;
-}
-strong {
-  font-weight: bold;
-}
-em {
-  font-style: italic;
-}
-
-@content-width: 980px;
-
-@header-font-size: 2rem;
-@header-height: 4rem;
-@header-padding-tb: (@header-height - @header-font-size) / 2;
-@header-padding-lr: 2 * @header-padding-tb;
-#header {
-  background-color: #2c8ec9;
-  .box-shadow;
-  color: white;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 500;
-  #title {
-    font-size: @header-font-size;
-    margin: 0 auto;
-    max-width: @content-width;
-    padding: @header-padding-tb @header-padding-lr;
-  }
-}
-#content {
-  @file-image-height: 1.5rem;
-  @file-row-height: 2 * @file-image-height;
-  @file-row-padding: (@file-row-height - 1rem) / 2;
-  margin: 0 auto;
-  margin-top: @header-height;
-  max-width: @content-width;
-  position: relative;
-  z-index: 499;
-  #file-list {
-    width: 100%;
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      tr:first-child {
-        &:hover {
-          background-color: inherit;
-        }
-        th {
-          font-weight: bold;
-          padding: @file-row-padding;
-          padding-left: 0;
-          text-align: left;
-          &#last-modified {
-            max-width: 10rem;
-          }
-        }
-      }
-      tr.file {
-        td:first-child {
-          a {
-            padding-left: 1.5 * @file-image-height;
-          }
-          &:before {
-            content: '';
-            background: url('/images/non-commercial/file.svg');
-            height: @file-image-height;
-            margin: (@file-row-height - @file-image-height) / 2 0;
-            position: absolute;
-            width: @file-image-height;
-          }
-        }
-      }
-      tr {
-        &:hover {
-          background-color: @even-row;
-        }
-        td, th {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-          padding: 0;
-          &:first-child {
-            padding-left: 2 * @file-row-padding;
-          }
-        }
-        td {
-          a,
-          a:link,
-          a:visited,
-          a:hover,
-          a:active {
-            color: inherit;
-            text-decoration: inherit;
-            font-weight: inherit;
-          }
-          a {
-            display: block;
-            padding: @file-row-padding 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-@print-color: #000;
-@print-font-size: 1rem;
-@print-line-height-multiplier: 1.25;
-@print-row-margin-tb: @print-font-size / 4;
-@print-indentation: @print-font-size * 1.75;
-@print-padding-left: 0;
-
-#checklist.print{
-  color: @print-color;
-  font-family: Arial, Helvetica, sans-serif;
-  &> h1, h2, h3, h4, h5 {
-    margin: 0.5em 0;
-    text-align: center;
-  }
-  &> ol, &> ul {
-    margin: 0;
-    padding: 0;
-  }
-  ol, ul {
-    font-size: @print-font-size;
-    line-height: @print-font-size * @print-line-height-multiplier;
-    list-style: none;
-    padding-left: 0;
-    li {
-      border-top: 0.125rem solid white;
-      &.odd {
-        background: @odd-row;
-      }
-      &.even {
-        background: @even-row;
-      }
-      &:before {
-        .border-radius(0.0625rem);
-        content: "";
-        height: @print-font-size * @print-line-height-multiplier;
-        .inner-border(@print-color);
-        width: @print-font-size * @print-line-height-multiplier;
-        margin: @print-row-margin-tb 0;
-        position: absolute;
-      }
-      &.depth-1:before {
-        margin-left: @print-padding-left + (@print-indentation - @print-font-size) - @print-font-size / 2;
-      }
-      &.depth-2:before {
-        margin-left: @print-padding-left + (2 * @print-indentation - @print-font-size) - @print-font-size / 2;
-      }
-      &.depth-3:before {
-        margin-left: @print-padding-left + (3 * @print-indentation - @print-font-size) - @print-font-size / 2;
-      }
-      &.depth-4:before {
-        margin-left: @print-padding-left + (4 * @print-indentation - @print-font-size) - @print-font-size / 2;
-      }
-      div {
-        padding: @print-row-margin-tb 0;
-        &.depth-1 {
-          margin-left: @print-padding-left + @print-indentation;
-        }
-        &.depth-2 {
-          margin-left: @print-padding-left + 2 * @print-indentation;
-        }
-        &.depth-3 {
-          margin-left: @print-padding-left + 3 * @print-indentation;
-        }
-        &.depth-4 {
-          margin-left: @print-padding-left + 4 * @print-indentation;
-        }
-      }
-      img {
-        height: @print-font-size;
-        margin-bottom: -0.5 * @print-font-size * (@print-line-height-multiplier - 1)
-      }
-    }
-  }
 }

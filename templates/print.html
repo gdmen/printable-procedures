@@ -11,7 +11,7 @@
     <script type="text/javascript">
       $(document).ready(function () {
         $('#checklist').html(marked(MARKDOWN))
-        $.each($('#checklist li'), function (index, elemi) {
+        $.each($('#checklist > ol li, #checklist > ul li'), function (index, elemi) {
           var elemi = $(elemi)
           var color_cls = 'even'
           if (index % 2 === 0) {
@@ -19,15 +19,14 @@
           }
           elemi.addClass(color_cls)
           var depth_cls = 'depth-' + elemi.parents('ol, ul').length
-          elemi.addClass(depth_cls)
           // Insert divs around this step's text
           var not_sublists = elemi.contents().not(function () {
             return this.nodeName === 'OL' || this.nodeName === 'UL'
           })
-          not_sublists.wrapAll('<div class="' + depth_cls + '"></div>');
+          not_sublists.wrapAll('<div class="' + depth_cls + '"><span></span></div>');
         })
       })
     </script>
-    <div id="checklist" class="print"></div> 
+    <div id="checklist"></div> 
   </body>
 </html>

@@ -1,4 +1,4 @@
-# Drug Care Procedure
+# Alcohol Care
 * __Seizure__ <call></call>
   * DO NOT restrain
   * Protect head & body from injury
@@ -31,10 +31,10 @@
 * <call></call>
   * Find out what substances they've taken
 
-<sources>
+<div class="citations">
 
 * [Stanford University Office of Alcohol Policy and Education](https://alcohol.stanford.edu/alcohol-drug-info/staying-safe/looking-out-your-friends)
 * [Washington University in St. Louis, Division of Student Affairs](https://students.wustl.edu/immediate-care-intoxicated-person)
 * [Rick Curtis, Outdoor Action Program, The Trustees of Princeton University](https://www.princeton.edu/~oa/safety/alcohol.shtml)
 
-</sources>
+</div>
